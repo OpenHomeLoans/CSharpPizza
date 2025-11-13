@@ -16,8 +16,8 @@ export const CartPage = () => {
   });
 
   const updateItemMutation = useMutation({
-    mutationFn: ({ itemId, quantity, toppingIds }: { itemId: number; quantity: number; toppingIds: number[] }) =>
-      cartApi.updateItem(itemId, { quantity, toppingIds }),
+    mutationFn: ({ itemId, quantity, addedToppingIds, removedToppingIds }: { itemId: string; quantity: number; addedToppingIds: string[]; removedToppingIds: string[] }) =>
+      cartApi.updateItem(itemId, { quantity, addedToppingIds, removedToppingIds }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['cart'] });
       fetchCartCount();
@@ -53,7 +53,7 @@ export const CartPage = () => {
     },
   });
 
-  const handleUpdateQuantity = (itemId: number, currentQuantity: number, delta: number) => {
+  const handleUpdateQuantity = (itemId: string, currentQuantity: number, delta: number) => {
     const newQuantity = currentQuantity + delta;
     if (newQuantity < 1) return;
 
@@ -63,11 +63,12 @@ export const CartPage = () => {
     updateItemMutation.mutate({
       itemId,
       quantity: newQuantity,
-      toppingIds: item.customizations.map((c) => c.toppingId),
+      addedToppingIds: item.customToppings.map((c) => c.toppingId),
+      removedToppingIds: [],
     });
   };
 
-  const handleRemoveItem = (itemId: number) => {
+  const handleRemoveItem = (itemId: string) => {
     if (confirm('Remove this item from cart?')) {
       removeItemMutation.mutate(itemId);
     }
@@ -114,17 +115,15 @@ export const CartPage = () => {
         <div className="cart-items">
           {cart.items.map((item) => (
             <div key={item.id} className="cart-item">
-              <img src={item.pizzaImageUrl} alt={item.pizzaName} className="cart-item-image" />
-              
               <div className="cart-item-details">
                 <h3>{item.pizzaName}</h3>
                 <p className="cart-item-base-price">Base: ${item.basePrice.toFixed(2)}</p>
                 
-                {item.customizations.length > 0 && (
+                {item.customToppings.length > 0 && (
                   <div className="cart-item-toppings">
                     <strong>Toppings:</strong>
                     <ul>
-                      {item.customizations.map((topping) => (
+                      {item.customToppings.map((topping) => (
                         <li key={topping.toppingId}>
                           {topping.toppingName} (+${topping.price.toFixed(2)})
                         </li>
@@ -153,7 +152,7 @@ export const CartPage = () => {
                   </button>
                 </div>
 
-                <p className="cart-item-total">${item.totalPrice.toFixed(2)}</p>
+                <p className="cart-item-total">${item.itemTotal.toFixed(2)}</p>
 
                 <button
                   onClick={() => handleRemoveItem(item.id)}

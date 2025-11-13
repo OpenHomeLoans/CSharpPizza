@@ -12,12 +12,12 @@ export const cartApi = {
     return response.data;
   },
 
-  updateItem: async (itemId: number, data: UpdateCartItemRequest): Promise<Cart> => {
+  updateItem: async (itemId: string, data: UpdateCartItemRequest): Promise<Cart> => {
     const response = await apiClient.put<Cart>(`/cart/items/${itemId}`, data);
     return response.data;
   },
 
-  removeItem: async (itemId: number): Promise<Cart> => {
+  removeItem: async (itemId: string): Promise<Cart> => {
     const response = await apiClient.delete<Cart>(`/cart/items/${itemId}`);
     return response.data;
   },

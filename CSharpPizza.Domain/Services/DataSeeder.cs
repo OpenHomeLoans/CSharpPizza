@@ -65,7 +65,7 @@ public class DataSeeder : IDataSeeder
                 Description = "A tropical twist on a classic favorite! Juicy ham and sweet pineapple chunks on a bed of tangy tomato sauce and melted mozzarella cheese. Perfect for those who love a sweet and savory combination.",
                 BasePrice = 8.99m,
                 Slug = "hawaiian-delight",
-                ImageUrl = null,
+                ImageUrl = "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=800&q=80",
                 PizzaToppings = new List<PizzaTopping>
                 {
                     new PizzaTopping { ToppingId = GetTopping("Tomato Sauce").Id },
@@ -80,7 +80,7 @@ public class DataSeeder : IDataSeeder
                 Description = "A meat lover's dream! Crispy bacon, savory sausage, and melted cheese on a smoky BBQ sauce base, topped with fresh green bell peppers for a perfect balance. This hearty pizza is loaded with flavor in every bite.",
                 BasePrice = 11.99m,
                 Slug = "bacon-supreme",
-                ImageUrl = null,
+                ImageUrl = "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80",
                 PizzaToppings = new List<PizzaTopping>
                 {
                     new PizzaTopping { ToppingId = GetTopping("BBQ Sauce").Id },
@@ -96,7 +96,7 @@ public class DataSeeder : IDataSeeder
                 Description = "Spice up your day with this fiesta on a pizza! Seasoned ground beef, fresh onions, and fiery jalapeno peppers on a zesty salsa sauce base. Bold, spicy, and absolutely delicious for those who crave heat.",
                 BasePrice = 10.49m,
                 Slug = "mexican",
-                ImageUrl = null,
+                ImageUrl = "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80",
                 PizzaToppings = new List<PizzaTopping>
                 {
                     new PizzaTopping { ToppingId = GetTopping("Salsa Sauce").Id },

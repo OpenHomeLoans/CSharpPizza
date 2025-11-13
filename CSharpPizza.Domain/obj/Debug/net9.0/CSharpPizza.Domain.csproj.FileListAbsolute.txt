@@ -15,3 +15,4 @@ C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPiz
 C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\refint\CSharpPizza.Domain.dll
 C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPizza.Domain.pdb
 C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\ref\CSharpPizza.Domain.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPizza.Domain.sourcelink.json

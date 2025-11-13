@@ -11,9 +11,6 @@ export const PizzaCard = ({ pizza }: PizzaCardProps) => {
     <div className="pizza-card">
       <div className="pizza-image">
         <img src={pizza.imageUrl} alt={pizza.name} />
-        {pizza.isVegetarian && (
-          <span className="veg-badge">🌱 Veg</span>
-        )}
       </div>
       <div className="pizza-content">
         <h3 className="pizza-name">{pizza.name}</h3>

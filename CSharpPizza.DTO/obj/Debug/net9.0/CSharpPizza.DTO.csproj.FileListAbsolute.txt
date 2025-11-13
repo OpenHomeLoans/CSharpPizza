@@ -13,3 +13,4 @@ C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\bin\Debug\net9.0\CSharpPizza.
 C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\bin\Debug\net9.0\CSharpPizza.Data.pdb
 C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPizza.DTO.csproj.AssemblyReference.cache
 C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPi.AF978441.Up2Date
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPizza.DTO.sourcelink.json

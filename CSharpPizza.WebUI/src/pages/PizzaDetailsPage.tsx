@@ -14,7 +14,7 @@ export const PizzaDetailsPage = () => {
   const { fetchCartCount } = useCartStore();
   
   const [quantity, setQuantity] = useState(1);
-  const [selectedToppings, setSelectedToppings] = useState<number[]>([]);
+  const [selectedToppings, setSelectedToppings] = useState<string[]>([]);
 
   const { data: pizza, isLoading, error } = useQuery({
     queryKey: ['pizza', slug],
@@ -34,7 +34,7 @@ export const PizzaDetailsPage = () => {
     },
   });
 
-  const handleToppingToggle = (toppingId: number) => {
+  const handleToppingToggle = (toppingId: string) => {
     setSelectedToppings((prev) =>
       prev.includes(toppingId)
         ? prev.filter((id) => id !== toppingId)
@@ -54,15 +54,16 @@ export const PizzaDetailsPage = () => {
     addToCartMutation.mutate({
       pizzaId: pizza.id,
       quantity,
-      toppingIds: selectedToppings,
+      addedToppingIds: selectedToppings,
+      removedToppingIds: [],
     });
   };
 
   const calculateTotalPrice = () => {
     if (!pizza) return 0;
     const toppingsPrice = selectedToppings.reduce((sum, toppingId) => {
-      const topping = pizza.toppings.find((t) => t.toppingId === toppingId);
-      return sum + (topping?.topping.price || 0);
+      const topping = pizza.toppings.find((t) => t.id === toppingId);
+      return sum + (topping?.cost || 0);
     }, 0);
     return (pizza.basePrice + toppingsPrice) * quantity;
   };
@@ -99,7 +100,6 @@ export const PizzaDetailsPage = () => {
 
         <div className="pizza-details-content">
           <h1>{pizza.name}</h1>
-          {pizza.isVegetarian && <span className="veg-badge">🌱 Vegetarian</span>}
           <p className="pizza-details-description">{pizza.description}</p>
           <p className="pizza-base-price">Base Price: ${pizza.basePrice.toFixed(2)}</p>
 
@@ -107,15 +107,15 @@ export const PizzaDetailsPage = () => {
             <div className="toppings-section">
               <h3>Customize Your Pizza</h3>
               <div className="toppings-list">
-                {pizza.toppings.map((pt) => (
-                  <label key={pt.toppingId} className="topping-item">
+                {pizza.toppings.map((topping) => (
+                  <label key={topping.id} className="topping-item">
                     <input
                       type="checkbox"
-                      checked={selectedToppings.includes(pt.toppingId)}
-                      onChange={() => handleToppingToggle(pt.toppingId)}
+                      checked={selectedToppings.includes(topping.id)}
+                      onChange={() => handleToppingToggle(topping.id)}
                     />
-                    <span className="topping-name">{pt.topping.name}</span>
-                    <span className="topping-price">+${pt.topping.price.toFixed(2)}</span>
+                    <span className="topping-name">{topping.name}</span>
+                    <span className="topping-price">+${topping.cost.toFixed(2)}</span>
                   </label>
                 ))}
               </div>

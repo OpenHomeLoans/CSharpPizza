@@ -8,7 +8,7 @@ export const pizzasApi = {
   },
 
   getBySlug: async (slug: string): Promise<Pizza> => {
-    const response = await apiClient.get<Pizza>(`/pizzas/${slug}`);
+    const response = await apiClient.get<Pizza>(`/pizzas/slug/${slug}`);
     return response.data;
   },
 };

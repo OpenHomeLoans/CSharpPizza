@@ -1,11 +1,12 @@
 // User and Auth types
 export interface User {
-  id: number;
+  id: string;
   name: string;
   email: string;
   mobile: string;
   address: string;
   role: 'Customer' | 'Admin';
+  createdAt: string;
 }
 
 export interface AuthResponse {
@@ -28,101 +29,96 @@ export interface RegisterRequest {
 
 // Pizza types
 export interface Topping {
-  id: number;
+  id: string;
   name: string;
-  price: number;
-}
-
-export interface PizzaTopping {
-  toppingId: number;
-  topping: Topping;
+  description: string;
+  cost: number;
 }
 
 export interface Pizza {
-  id: number;
+  id: string;
   name: string;
   slug: string;
   description: string;
   imageUrl: string;
   basePrice: number;
-  isVegetarian: boolean;
-  isAvailable: boolean;
-  toppings: PizzaTopping[];
+  computedCost: number;
+  toppings: Topping[];
 }
 
 export interface PizzaList {
-  id: number;
+  id: string;
   name: string;
   slug: string;
   description: string;
   imageUrl: string;
   basePrice: number;
-  isVegetarian: boolean;
-  isAvailable: boolean;
+  computedCost: number;
 }
 
 // Cart types
 export interface ToppingCustomization {
-  toppingId: number;
+  toppingId: string;
   toppingName: string;
   price: number;
 }
 
 export interface CartItem {
-  id: number;
-  pizzaId: number;
+  id: string;
+  pizzaId: string;
   pizzaName: string;
-  pizzaImageUrl: string;
   basePrice: number;
   quantity: number;
-  customizations: ToppingCustomization[];
-  totalPrice: number;
+  customToppings: ToppingCustomization[];
+  itemTotal: number;
 }
 
 export interface Cart {
-  id: number;
-  userId: number;
+  id: string;
+  userId: string;
   items: CartItem[];
   totalAmount: number;
 }
 
 export interface AddToCartRequest {
-  pizzaId: number;
+  pizzaId: string;
   quantity: number;
-  toppingIds: number[];
+  addedToppingIds: string[];
+  removedToppingIds: string[];
 }
 
 export interface UpdateCartItemRequest {
   quantity: number;
-  toppingIds: number[];
+  addedToppingIds: string[];
+  removedToppingIds: string[];
 }
 
 // Order types
 export interface OrderItem {
-  id: number;
-  pizzaId: number;
+  id: string;
+  pizzaId: string;
   pizzaName: string;
   quantity: number;
   unitPrice: number;
   totalPrice: number;
-  customizations: ToppingCustomization[];
+  customToppings: ToppingCustomization[];
 }
 
 export interface Order {
-  id: number;
-  userId: number;
-  orderDate: string;
+  id: string;
+  userId: string;
   status: 'Pending' | 'Confirmed' | 'Preparing' | 'OutForDelivery' | 'Delivered' | 'Cancelled';
   totalAmount: number;
   items: OrderItem[];
+  createdAt: string;
 }
 
 export interface OrderList {
-  id: number;
-  orderDate: string;
+  id: string;
   status: string;
   totalAmount: number;
   itemCount: number;
+  createdAt: string;
 }
 
 export interface CreateOrderRequest {

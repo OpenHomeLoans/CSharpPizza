@@ -1,6 +1,7 @@
 using AutoMapper;
 using CSharpPizza.Data.Entities;
 using CSharpPizza.DTO.Pizzas;
+using CSharpPizza.DTO.Toppings;
 
 namespace CSharpPizza.DTO.Mappings;
 

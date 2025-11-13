@@ -12,3 +12,4 @@ C:\Users\princ\repo\csharp-project\CSharpPizza.Data\obj\Debug\net9.0\refint\CSha
 C:\Users\princ\repo\csharp-project\CSharpPizza.Data\obj\Debug\net9.0\CSharpPizza.Data.pdb
 C:\Users\princ\repo\csharp-project\CSharpPizza.Data\obj\Debug\net9.0\CSharpPizza.Data.genruntimeconfig.cache
 C:\Users\princ\repo\csharp-project\CSharpPizza.Data\obj\Debug\net9.0\ref\CSharpPizza.Data.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.Data\obj\Debug\net9.0\CSharpPizza.Data.sourcelink.json

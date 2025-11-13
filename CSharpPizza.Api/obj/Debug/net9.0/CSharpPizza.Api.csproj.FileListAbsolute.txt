@@ -162,3 +162,4 @@ C:\Users\princ\repo\csharp-project\CSharpPizza.Api\obj\Debug\net9.0\refint\CShar
 C:\Users\princ\repo\csharp-project\CSharpPizza.Api\obj\Debug\net9.0\CSharpPizza.Api.pdb
 C:\Users\princ\repo\csharp-project\CSharpPizza.Api\obj\Debug\net9.0\CSharpPizza.Api.genruntimeconfig.cache
 C:\Users\princ\repo\csharp-project\CSharpPizza.Api\obj\Debug\net9.0\ref\CSharpPizza.Api.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.Api\obj\Debug\net9.0\CSharpPizza.Api.sourcelink.json
