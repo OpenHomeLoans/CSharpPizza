@@ -1,0 +1,17 @@
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\bin\Debug\net9.0\CSharpPizza.Domain.deps.json
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\bin\Debug\net9.0\CSharpPizza.Domain.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\bin\Debug\net9.0\CSharpPizza.Domain.pdb
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\bin\Debug\net9.0\CSharpPizza.Data.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\bin\Debug\net9.0\CSharpPizza.DTO.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\bin\Debug\net9.0\CSharpPizza.Data.pdb
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\bin\Debug\net9.0\CSharpPizza.DTO.pdb
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPizza.Domain.csproj.AssemblyReference.cache
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPizza.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPizza.Domain.AssemblyInfoInputs.cache
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPizza.Domain.AssemblyInfo.cs
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPizza.Domain.csproj.CoreCompileInputs.cache
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPi.DB1CE04A.Up2Date
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPizza.Domain.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\refint\CSharpPizza.Domain.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\CSharpPizza.Domain.pdb
+C:\Users\princ\repo\csharp-project\CSharpPizza.Domain\obj\Debug\net9.0\ref\CSharpPizza.Domain.dll

@@ -1,0 +1,15 @@
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\bin\Debug\net9.0\CSharpPizza.DTO.deps.json
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\bin\Debug\net9.0\CSharpPizza.DTO.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\bin\Debug\net9.0\CSharpPizza.DTO.pdb
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPizza.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPizza.DTO.AssemblyInfoInputs.cache
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPizza.DTO.AssemblyInfo.cs
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPizza.DTO.csproj.CoreCompileInputs.cache
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPizza.DTO.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\refint\CSharpPizza.DTO.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPizza.DTO.pdb
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\ref\CSharpPizza.DTO.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\bin\Debug\net9.0\CSharpPizza.Data.dll
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\bin\Debug\net9.0\CSharpPizza.Data.pdb
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPizza.DTO.csproj.AssemblyReference.cache
+C:\Users\princ\repo\csharp-project\CSharpPizza.DTO\obj\Debug\net9.0\CSharpPi.AF978441.Up2Date

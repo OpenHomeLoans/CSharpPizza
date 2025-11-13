@@ -1,0 +1,6 @@
+@CSharpPizza.Api_HostAddress = http://localhost:5187
+
+GET {{CSharpPizza.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
