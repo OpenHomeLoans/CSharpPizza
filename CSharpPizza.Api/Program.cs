@@ -29,6 +29,7 @@ builder.Services.AddDbContext<PizzaDbContext>(options =>
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPizzaRepository, PizzaRepository>();
+builder.Services.AddScoped<ILogRepository, LogRepository>();
 
 // Register services
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -38,6 +39,7 @@ builder.Services.AddScoped<IToppingService, ToppingService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IDataSeeder, DataSeeder>();
+builder.Services.AddScoped<ILoggingService, LoggingService>();
 
 // Configure AutoMapper
 builder.Services.AddAutoMapper(typeof(CSharpPizza.DTO.Mappings.UserProfile).Assembly);
@@ -166,6 +168,9 @@ app.UseCors();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+// Add request logging middleware
+app.UseMiddleware<RequestLoggingMiddleware>();
 
 app.MapControllers();
 

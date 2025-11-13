@@ -34,6 +34,12 @@ export const Navbar = () => {
             </Link>
           )}
 
+          {isAuthenticated && user?.role === 'Admin' && (
+            <Link to="/admin" className="nav-link">
+              Admin
+            </Link>
+          )}
+
           <div className="navbar-auth">
             {isAuthenticated ? (
               <div className="user-menu">
