@@ -33,6 +33,7 @@ export interface Topping {
   name: string;
   description: string;
   cost: number;
+  isDeleted?: boolean;
 }
 
 export interface Pizza {
@@ -44,6 +45,7 @@ export interface Pizza {
   basePrice: number;
   computedCost: number;
   toppings: Topping[];
+  isDeleted?: boolean;
 }
 
 export interface PizzaList {
@@ -123,4 +125,48 @@ export interface OrderList {
 
 export interface CreateOrderRequest {
   // Empty for now - order is created from current cart
+}
+
+// Admin types
+export interface AdminOrderFilter {
+  status?: string;
+  startDate?: string;
+  endDate?: string;
+  customerName?: string;
+}
+
+export interface AdminOrderListDto extends OrderList {
+  userId: string;
+  customerName: string;
+  customerEmail: string;
+}
+
+// Pizza management types
+export interface CreatePizzaDto {
+  name: string;
+  description: string;
+  basePrice: number;
+  imageUrl?: string;
+  toppingIds: string[];
+}
+
+export interface UpdatePizzaDto {
+  name: string;
+  description: string;
+  basePrice: number;
+  imageUrl?: string;
+  toppingIds: string[];
+}
+
+// Topping management types
+export interface CreateToppingDto {
+  name: string;
+  description: string;
+  cost: number;
+}
+
+export interface UpdateToppingDto {
+  name?: string;
+  description?: string;
+  cost?: number;
 }

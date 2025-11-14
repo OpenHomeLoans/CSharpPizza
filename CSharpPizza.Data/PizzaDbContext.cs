@@ -18,6 +18,7 @@ public class PizzaDbContext : DbContext
     public DbSet<CartItemTopping> CartItemToppings => Set<CartItemTopping>();
     public DbSet<Order> Orders => Set<Order>();
     public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+    public DbSet<Log> Logs => Set<Log>();
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -39,6 +40,7 @@ public class PizzaDbContext : DbContext
         modelBuilder.Entity<CartItem>().HasQueryFilter(ci => !ci.IsDeleted);
         modelBuilder.Entity<Order>().HasQueryFilter(o => !o.IsDeleted);
         modelBuilder.Entity<OrderItem>().HasQueryFilter(oi => !oi.IsDeleted);
+        modelBuilder.Entity<Log>().HasQueryFilter(l => !l.IsDeleted);
 
         // User configuration
         modelBuilder.Entity<User>(entity =>
@@ -161,6 +163,14 @@ public class PizzaDbContext : DbContext
                 .WithMany(o => o.OrderItems)
                 .HasForeignKey(oi => oi.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        // Log configuration
+        modelBuilder.Entity<Log>(entity =>
+        {
+            entity.HasKey(l => l.Id);
+            entity.Property(l => l.LogLevel).IsRequired();
+            entity.Property(l => l.Message).IsRequired();
         });
     }
 

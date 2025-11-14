@@ -4,11 +4,17 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
 import { Navbar } from './components/Navbar';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import { AdminProtectedRoute } from './components/AdminProtectedRoute';
+import { AdminLayout } from './components/AdminLayout';
 import { HomePage } from './pages/HomePage';
 import { PizzaDetailsPage } from './pages/PizzaDetailsPage';
 import { CartPage } from './pages/CartPage';
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
+import { AdminDashboard } from './pages/admin/AdminDashboard';
+import { AdminOrders } from './pages/admin/AdminOrders';
+import { AdminPizzas } from './pages/admin/AdminPizzas';
+import { AdminToppings } from './pages/admin/AdminToppings';
 import { useAuthStore } from './stores/authStore';
 import { useCartStore } from './stores/cartStore';
 import './App.css';
@@ -51,6 +57,21 @@ function App() {
               />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
+              
+              {/* Admin Routes */}
+              <Route
+                path="/admin"
+                element={
+                  <AdminProtectedRoute>
+                    <AdminLayout />
+                  </AdminProtectedRoute>
+                }
+              >
+                <Route index element={<AdminDashboard />} />
+                <Route path="orders" element={<AdminOrders />} />
+                <Route path="pizzas" element={<AdminPizzas />} />
+                <Route path="toppings" element={<AdminToppings />} />
+              </Route>
             </Routes>
           </main>
         </div>

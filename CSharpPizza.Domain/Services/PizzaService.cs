@@ -1,6 +1,7 @@
 using AutoMapper;
 using CSharpPizza.Data.Entities;
 using CSharpPizza.Data.Repositories;
+using CSharpPizza.Domain.Extensions;
 using CSharpPizza.DTO.Pizzas;
 
 namespace CSharpPizza.Domain.Services;
@@ -61,11 +62,18 @@ public class PizzaService : IPizzaService
 
     public async Task<PizzaDto> CreateAsync(CreatePizzaDto createDto, CancellationToken cancellationToken = default)
     {
+ 
+        var description = createDto.Description;
+        if (string.IsNullOrWhiteSpace(description))
+        {
+            description = await "https://lorem-api.com/api/lorem".FetchDataAsync();
+        }
+
         // Create pizza entity
         var pizza = new Pizza
         {
             Name = createDto.Name,
-            Description = createDto.Description,
+            Description = description,
             BasePrice = createDto.BasePrice,
             ImageUrl = createDto.ImageUrl,
             Slug = GenerateSlug(createDto.Name)
@@ -104,9 +112,15 @@ public class PizzaService : IPizzaService
             throw new KeyNotFoundException($"Pizza with ID {id} not found");
         }
 
+        var description = updateDto.Description;
+        if (string.IsNullOrWhiteSpace(description))
+        {
+            description = await "https://lorem-api.com/api/lorem".FetchDataAsync();
+        }
+
         // Update pizza properties
         pizza.Name = updateDto.Name;
-        pizza.Description = updateDto.Description;
+        pizza.Description = description;
         pizza.BasePrice = updateDto.BasePrice;
         pizza.ImageUrl = updateDto.ImageUrl;
         pizza.Slug = GenerateSlug(updateDto.Name);

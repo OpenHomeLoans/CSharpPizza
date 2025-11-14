@@ -1,6 +1,7 @@
 using AutoMapper;
 using CSharpPizza.Data.Entities;
 using CSharpPizza.Data.Repositories;
+using CSharpPizza.Domain.Extensions;
 using CSharpPizza.DTO.Toppings;
 
 namespace CSharpPizza.Domain.Services;
@@ -30,10 +31,17 @@ public class ToppingService : IToppingService
 
     public async Task<ToppingDto> CreateAsync(CreateToppingDto createDto, CancellationToken cancellationToken = default)
     {
+    
+        var description = createDto.Description;
+        if (string.IsNullOrWhiteSpace(description))
+        {
+            description = await "https://lorem-api.com/api/lorem".FetchDataAsync();
+        }
+
         var topping = new Topping
         {
             Name = createDto.Name,
-            Description = createDto.Description,
+            Description = description,
             Cost = createDto.Cost
         };
 
@@ -51,8 +59,14 @@ public class ToppingService : IToppingService
             throw new KeyNotFoundException($"Topping with ID {id} not found");
         }
 
+        var description = updateDto.Description;
+        if (string.IsNullOrWhiteSpace(description))
+        {
+            description = await "https://lorem-api.com/api/lorem".FetchDataAsync();
+        }
+
         topping.Name = updateDto.Name;
-        topping.Description = updateDto.Description;
+        topping.Description = description;
         topping.Cost = updateDto.Cost;
 
         await _toppingRepository.UpdateAsync(topping, cancellationToken);
