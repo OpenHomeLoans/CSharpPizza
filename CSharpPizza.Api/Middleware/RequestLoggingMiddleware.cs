@@ -16,9 +16,6 @@ public class RequestLoggingMiddleware
 
     public async Task InvokeAsync(HttpContext context, ILoggingService loggingService)
     {
-        // TODO: Should implement request/response body logging for debugging
-        // TODO: Should filter sensitive data (passwords, tokens) from logs
-        // GOTCHA: Logging happens synchronously in the request pipeline - could impact performance
         
         var method = context.Request.Method;
         var path = context.Request.Path;
